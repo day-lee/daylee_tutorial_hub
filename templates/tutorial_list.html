@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %} Tutorial List {% endblock %}
+{% block content %}
+
+		<br>
+
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<h5>Tutorial List</h5>
+				</div>
+				<div class="card card-body table-responsive">
+					<table class="table">
+						<tr>
+                            <th> Title </th>
+                            <th> Instructor </th>
+
+                            <th> Tags </th>
+                            <th> Last Updated</th>
+                            <th> Difficulty</th>
+                            <th> Language </th>
+                            <th> Duration</th>
+						</tr>
+                    {% for item in object_list %}
+                        <tr>
+                            <td><a href="{% url 'tutorial_detail' item.pk %}">{{item.title}}</a></td>
+                            <td>{{item.instructor}}</td>
+                            <td>{{item.tags}}</td>
+                            <td>{{item.last_updated}}</td>
+                            <td>{{item.difficulty}}</td>
+                            <td>{{item.language}}</td>
+                            <td>{{item.estimated_learning_hours}}</td>
+                        </tr>
+                    {% endfor %}
+					</table>
+				</div>
+			</div>
+
+		</div>
+
+  <!-- Footer -->
+{% include 'footer.html' %}
+
+
+{% endblock content %}

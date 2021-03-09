@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %} Tutorial:{{object.title}} {% endblock %}
+{% block content %}
+
+<h1> Tutorial Details </h1>
+
+		<br>
+
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<h5>{{object.title}} </h5>
+				</div>
+
+				<div class="card card-body">
+					<table class="table">
+						<tr>
+
+                            <th> Instructor </th>
+                            <th> Tags </th>
+                            <th> Language </th>
+                            <th> Last Updated</th>
+                            <th> Difficulty</th>
+                            <th> Duration</th>
+                            <th> Description </th>
+
+                                                        <th> Link </th>
+
+						</tr>
+
+                        <tr>
+
+                            <td>{{object.instructor}}</td>
+
+                            <td>{{object.tags}}</td>
+                            <td>{{object.language}}</td>
+                            <td>{{object.last_updated}}</td>
+                            <td>{{object.difficulty}}</td>
+                            <td>{{object.estimated_learning_hours}}</td>
+                            <td>{{object.description}}</td>
+
+                                                        <td>{{object.link}}</td>    </tr>
+
+
+					</table>
+				</div>
+			</div>
+
+		</div>
+
+
+
+{% endblock content %}

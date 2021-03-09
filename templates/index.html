@@ -1,7 +1,111 @@
 {% extends 'base.html' %}
+{% block title %} {% endblock %}
+  <!-- Page Header -->
+  {% include 'header.html' %}
 
 {% block content %}
+<body>
 
 <h1> Home </h1>
 
-{% endblock %}
+  <section class="colored-section" id="title">
+
+    <div class="container-fluid">
+
+
+
+
+
+      <!-- Title -->
+
+      <div class="row">
+
+        <div class="col-lg-6">
+          <h1 class="big-heading">
+           Build your own curriculum with a curated database.</h1>
+          <button type="button" class="btn btn-dark btn-lg download-button"> Register for Free</button>
+        </div>
+
+        <div class="col-lg-6">
+          <img class="title-image" src="images/iphone6.png" alt="photo">
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</br></br>
+  <!-- Features -->
+
+  <section class="white-section" id="features">
+
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="feature-box col-lg-4">
+          <i class="icon fas fa-check-circle fa-4x"></i>
+          <h3 class="feature-title">Easy to use</h3>
+          <p>So easy to use, even your dog could do it.</p>
+        </div>
+
+        <div class="feature-box col-lg-4">
+          <i class="icon fas fa-bullseye fa-4x"></i>
+          <h3 class="feature-title">All levels</h3>
+          <p>We have all the dogs, the greatest dogs.</p>
+        </div>
+
+        <div class="feature-box col-lg-4">
+          <i class="icon fas fa-heart fa-4x"></i>
+          <h3 class="feature-title">Quality Guaranteed</h3>
+          <p>Find the best free tutorials or your money back.</p>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- Pricing -->
+
+  <section class="white-section" id="pricing">
+
+    <h2 class="section-heading">Pricing</h2>
+    <p>Tutorial Hub provides list of free Python and Django tutorials on the internet.</p>
+
+    <div class="row">
+
+      <div class="pricing-column col-lg-4 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3>Lifetime Access</h3>
+          </div>
+
+          <div class="card-body">
+            <h2 class="price-text">$20</h2>
+            <p>Personalised Curriculum</p>
+            <p>Filter</p>
+            <p>Beginner to Advanced level</p>
+            <button class="btn btn-lg btn-block btn-outline-dark" type="button">Sign Up</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+    </div>
+  </section>
+</body>
+
+  <!-- Footer -->
+{% include 'footer.html' %}
+
+
+
+{% endblock content %}
+

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %} Introduction {% endblock %}
+{% block content %}
+
+<br>
+<div class="col-md">
+    <div class="card card-body">
+        <h4>{{object.title}} </h4>
+    </div>
+<br>
+    <div class="card" style="width: auto;">
+        <h1 style="color:red;">Can I add video here?</h1>
+        <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Description</h5>
+    <p class="card-text">{{object.description}} <br> {{object.tags}}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"> Difficulty: {{object.difficulty}}</li>
+    <li class="list-group-item"> Instructor: {{object.instructor}}</li>
+    <li class="list-group-item"> Last Updated: {{object.last_updated}}</li>
+    <li class="list-group-item">Language: {{object.language}}</li>
+    <li class="list-group-item"> Duration: {{object.estimated_learning_hours}}</li>
+  </ul>
+  <div class="card-body">
+    <a href="{{object.link}}" class="card-link">{{object.link}}</a>
+  </div>
+</div>
+</div>
+  <!-- Footer -->
+{% include 'footer.html' %}
+
+{% endblock content %}
