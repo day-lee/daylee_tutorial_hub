@@ -1,0 +1,197 @@
+/* index */
+	.colored-section {
+	    background-color: #d9e4dd;
+	    padding: 50px 0 30px 0;
+
+	}
+
+	.white-section {
+	    padding: 50px 0 30px 0;
+	}
+
+    body {
+		font-family: 'Merriweather', serif;
+		font-size: 100%;
+		margin: 0;
+		text-align: center;
+	}
+
+
+	.top-container {
+		background-color: #d9e4dd;
+		padding: 50px 0 30px 0;
+	
+	}
+
+	.middle-container {
+		background-color: #fbf7f0;
+		padding: 100px auto 10px auto;
+	}
+
+	.contact-me {
+		background-color:#fbf7f0;
+		padding: 50px auto 50px auto;
+		
+	}
+
+	.bottom-container {
+		background-color:#c6b497;
+		padding: 30px 0 30px 0;
+		position: relative;
+	}
+
+    h1 {
+		font-family: 'Sacramento', serif;
+		font-size: 2rem;
+		line-height: 3rem;
+		color: #060930;
+		margin: 10px auto 0 auto;
+	}
+
+	h2 {
+		color:#31326f;
+		font-family: 'Montserrat', serif;
+		font-weight: normal;
+		font-size: 1.5rem;
+		margin: 0 auto 20px auto;
+	}
+
+	h3 {
+		color:#595b83;
+		font-family: 'Montserrat', serif;
+		font-size: 1rem;
+		margin: 0 auto 20px auto;
+	}
+
+	hr {
+		border:none;
+		border-top: 10px
+		background-color: #fbf7f0;
+		height:10px;
+		width: 70%;
+		margin-top: 0px;
+	  }
+
+	a {
+		color:#31326f;
+		font-family: 'Montserrat', serif;
+		font-size: 1rem;
+		margin: 0 auto 20px auto;
+	}
+
+	p {
+		color: #31326f;
+		font-family: 'Montserrat', serif;
+		font-size: 1rem;
+		margin: 0 auto 20px auto;
+	}
+
+	.button1 {
+		display: inline-block;
+		margin-right: 10px;
+		position: relative;
+		left: 380px;
+		color: white;
+		display: inline-block;
+		position: relative;
+		left: 400px;
+	}
+
+	.apple {
+		position: relative;
+	}
+	 
+	 .btn:hover {
+		background:  #c6b497;
+		border: solid #c6b497 0;
+		text-decoration: none;
+		color: white;
+	 }
+
+	.circular {
+		border-radius: 30%;
+	}
+
+	.coding {
+		position: relative;
+	}
+
+	.dy {
+		width: 200px;
+		height: 200px;
+		position: relative;
+		margin-bottom: 10px;
+
+	}
+
+/* footer */
+	.velog {
+	    width: 2.5rem;
+	    height:2.5rem;
+		border-radius: 30%;
+	}
+
+	.linkedin {
+	    width: 2.5rem;
+	    height:2.5rem;
+		border-radius: 30%;
+	}
+
+	.github {
+	    width: 2.5rem;
+	    height:2.5rem;
+		border-radius: 30%;
+	}
+
+
+	/* tutorial_list */
+	.reset_btn {
+	    text-decoration: none;
+	    color: white;
+	    font-family: 'Merriweather', serif;
+	    margin-top: 1.5rem;
+
+	}
+
+    .search_btn {
+        margin-top: 1.5rem;
+
+    }
+
+    .sortbydate {
+        padding: 0.5rem;
+
+    }
+
+    .language {
+        padding-right: 0.2rem;
+        padding-left: 0.5rem;
+    }
+
+    .difficulty {
+        padding-right: 0.2rem;
+        padding-left: 0.5rem;
+    }
+
+
+
+
+
+	.b1:hover {
+		background-color: #fbf7f0 ;
+		border-radius: 30%;
+		color: white;
+	}
+
+	.b2:hover {
+		background-color: #fbf7f0 ;
+		border-radius: 30%;
+		color: white;
+	}
+
+/* register*/
+
+    .helptext{
+        font-family: 'Merriweather', serif;
+		font-size: 100%;
+    }

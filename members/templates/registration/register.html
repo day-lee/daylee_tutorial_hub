@@ -1,30 +1,58 @@
 {% extends 'base.html' %}
 {% block title %} Register {% endblock %}
-
 {% block content %}
+
+<div class="container">
+
 
 <h1> Register </h1>
 <br/>
 
 <div class="form-group">
     <form method="POST">
-        {% csrf_token %}
+        <input type="hidden" name="csrfmiddlewaretoken" value="7qFQgGEgzQZklTsrgY0BQUeSR1E0GcM2A55et72iAcJmNG1HN8s1aL7XbopBFCnw">
 
-        <div class="row">
+        <div class="row justify-content-center">
 			<div class="col-md">
 				<div class="card card-body">
 					<h5>Register</h5>
 				</div>
 
-				<div class="card card-body table-responsive">
-					<table class="table">
-                        {{ form.as_p }} <br/>
-                    </table>
-				</div>
-                 <button class="btn btn-secondary"> Register </button>
-            </div>
-        </div>
-    </form>
+<div class="card card-body table-responsive">
+
+<table class="table">
+    <div class="row justify-content-center">
+          <div class="col-sm-4">
+            <div class="card">
+<p><label for="id_username">Username</label><br>
+<input type="text" name="username" maxlength="150" autocapitalize="none" autocomplete="username" autofocus required id="id_username">
+<span class="helptext"><br> </span></p>
+
+<p><label for="id_password1">Password</label> <br>
+    <input type="password" name="password1" autocomplete="new-password" required id="id_password1"></p>
+
+<p><label for="id_password2">Confirm<br>Password</label><br>
+    <input type="password" name="password2" autocomplete="new-password" required id="id_password2">
+</p>
+</div>
+</div>
+</div>
+<span class="helptext">
+    <br>Tips for Safe Password
+    <br>Your password can’t be too similar to your other personal information.
+    <br>Your password must contain at least 8 characters.<br>Your password can’t be a commonly used password.
+    <br>Your password can’t be entirely numeric.<br/>
+</table>
+<div class="row justify-content-center">
+
+<div class="col-sm-4 ">
+<button class="btn btn-secondary btn-md"> Register </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</form>
 </div>
 
 

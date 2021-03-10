@@ -2,7 +2,99 @@
 {% block title %} Introduction {% endblock %}
 {% block content %}
 
-<h1> Introduction </h1>
+<h1 style="color:red;"> My Curriculum </h1>
+
+<div class="container-fluid">
+    <div class="row justify-content-md-center">
+
+        <div class="card card-body">
+            <h5>Tutorial List</h5>
+
+            <div class="card card-body">
+
+            <form method="get">
+
+                <div class="row justify-content-md-center">
+                <div class="col-sm-2 form-group is-valid">
+                    <label for="id_title__icontains">Search by Title</label>
+                    <input type="text" name="title__icontains" class="form-control is-valid" placeholder="search" title="" id="id_title__icontains">
+                </div>
+
+                <div class="col-sm-2 form-group is-valid">
+                    <label for="id_instructor__icontains">Search by Instructor</label>
+                    <input type="text" name="instructor__icontains" class="form-control is-valid" placeholder="search" title="" id="id_instructor__icontains">
+                </div>
+
+                <div class="col-sm-2 form-group is-valid"><label for="id_language">Language</label>
+                    <select name="language" class="language form-control is-valid" title="" id="id_language">
+                    <option value="" selected>Choose Language</option>
+                    <option value="Korean">Korean</option>
+                    <option value="English">English</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-2 form-group is-valid">
+                    <label for="id_difficulty"Choose Difficulty> Difficulty </label>
+                    <select name="difficulty" class="difficulty form-control is-valid" title="" id="id_difficulty">
+                    <option value="" selected>Choose Difficulty</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-2 form-group is-valid">
+                    <label for="id_date_sort">Sort by Date </label>
+                    <select name="date_sort" class="sortbydate form-control form-control-sm is-valid" placeholder="1234" title="" id="id_date_sort">
+                    <option value="" selected> Newest to Oldest </option>
+                    <option value="newest">Newest</option>
+                    <option value="oldest" >Oldest</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-1 ">
+                    <button class="btn btn-secondary search_btn" type="submit"> Search </button>
+                </div>
+
+                <div class="col-sm-1 ">
+                    <button class="btn btn-secondary reset_btn" type="submit"><a class="reset_btn" href="{% url 'tutorial_list'%}"> Reset </a></button>
+                </div>
+                </div>
+            </form>
+        </div>
+
+
+                    <div class="card card-body table-responsive">
+                        <table class="table">
+                            <tr>
+                                <th> Title</th>
+                                <th> Instructor</th>
+
+                                <th> Tags</th>
+                                <th> Last Updated</th>
+                                <th> Difficulty</th>
+                                <th> Language</th>
+                                <th> Duration</th>
+                            </tr>
+                            {% for item in tutorials %}
+                            <tr>
+                                <td><a href="{% url 'tutorial_detail' item.pk %}">{{item.title}}</a></td>
+                                <td>{{item.instructor}}</td>
+                                <td>{{item.tags}}</td>
+                                <td>{{item.last_updated}}</td>
+                                <td>{{item.difficulty}}</td>
+                                <td>{{item.language}}</td>
+                                <td>{{item.estimated_learning_hours}}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+
+    </div>
+</div>
+
+
 
   <!-- Footer -->
 {% include 'footer.html' %}

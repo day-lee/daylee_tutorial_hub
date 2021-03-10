@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %} Register {% endblock %}
+
+{% block content %}
+
+<h1> Register </h1>
+<br/>
+
+<div class="form-group">
+    <form method="POST">
+        {% csrf_token %}
+
+        <div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<h5>Register</h5>
+				</div>
+
+				<div class="card card-body table-responsive">
+					<table class="table">
+                        {{ form.as_p }} <br/>
+                    </table>
+                    <button class="btn btn-secondary btn-sm"> Register </button>
+				</div>
+
+            </div>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

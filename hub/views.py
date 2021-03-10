@@ -4,15 +4,35 @@ from .models import TutorialList
 
 from django.views.generic import View, ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from .filters import TutorialFilter
+
 
 class HomeView(ListView):
 	model = TutorialList
 	template_name ='index.html'
 
 
-class TutorialListView(ListView):
-    model = TutorialList
-    template_name = 'tutorial_list.html'
+# class based: html-> object_list
+# class TutorialListView(ListView):
+#     model = TutorialList
+#     template_name = 'tutorial_list.html'
+#
+# 	def get_context_data(self, **kwargs):
+# 		context = super().get_context_data( *kwargs)
+# 		context['filter'] = TutorialFilter(self.request.GET, queryset=self.get_queryset())
+# 		return context
+
+
+def TutorialsList(request):
+	tutorials = TutorialList.objects.all()
+	# tutorial = tutorials.tutoriallist_set.all() parent child relatioship case
+	myFilter = TutorialFilter(request.GET, queryset=tutorials)
+	tutorials = myFilter.qs #rendered, thrown into filter , filter down, remake var with the filter down data
+	return render(request, 'tutorial_list.html', {'tutorials': tutorials, 'myFilter':myFilter})
+
+
+
+
 
 # <a href="{% url 'tutorial-detail' post.pk %}"></a>
 class TutorialDetailsView(DetailView):
@@ -41,6 +61,3 @@ class ContactView(ListView):
 # def index(request):
 # 	return render(request, 'index.html')
 
-# def tutorials(request):
-# 	tutorials = TutorialList.objects.all()
-# 	return render(request, 'index.html', {'tutorials': tutorials})

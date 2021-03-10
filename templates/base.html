@@ -1,4 +1,6 @@
-<!doctype html>
+{% load static %}
+
+
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -6,19 +8,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
     <!-- Font Awesome -->
-  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <!-- Static Files     -->
+    <link rel='stylesheet' type="text/css" href="{% static '/css/main.css' %}">
+
+
 
     <title>
         {% block title %}
         Daylee's Tutorial Hub
         {% endblock %}
     </title>
+
+
+
   </head>
 
   <body>
@@ -43,15 +53,12 @@
 
        {% else %}
           <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{% url 'tutorial_list' %}">Tutorial List</a>
+          <a class="nav-link" aria-current="page" href="{% url 'tutorial_list' %}">Tutorial List</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Features</a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="#pricing">Pricing</a>
-          </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'login' %}">Login</a>
           </li>
