@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import TutorialList
-
+from .models import TutorialList, Curriculum
+from users import *
 from django.views.generic import View, ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .filters import TutorialFilter
+from django.contrib.auth.models import User
 
 
 class HomeView(ListView):
@@ -37,12 +38,32 @@ class ContactView(ListView):
     model = TutorialList
     template_name = 'contact.html'
 
-def MycurriculumList(request):
-	tutorials = TutorialList.objects.all()
-	# tutorial = tutorials.tutoriallist_set.all() parent child relatioship case
-	myFilter = TutorialFilter(request.GET, queryset=tutorials)
-	tutorials = myFilter.qs #rendered, thrown into filter , filter down, remake var with the filter down data
-	return render(request, 'curriculum_list.html', {'tutorials': tutorials, 'myFilter':myFilter})
+def MyCurriculumList(request):
+
+	if request.user.is_authenticated:
+		customer = request.user.customer #onetoone rel
+		curriculum, created = Curriculum.objects.get_or_create(customer=customer)
+		items = curriculum.curriculumitem_set.all()
+	else:
+		items = []
+
+	context = {'items': items}
+#gonna get all the order items that have above curriculum(order) as a parent
+#we are able to query child obj by setting the parent value and child object with all lowercase value and underscore and set
+	context = {}
+	return render(request, 'cart-curriculum_album.html', context)
+
+
+
+
+
+
+# def MycurriculumList(request):
+# 	tutorials = TutorialList.objects.all()
+# 	# tutorial = tutorials.tutoriallist_set.all() parent child relatioship case
+# 	myFilter = TutorialFilter(request.GET, queryset=tutorials)
+# 	tutorials = myFilter.qs #rendered, thrown into filter , filter down, remake var with the filter down data
+# 	return render(request, 'curriculum_list.html', {'tutorials': tutorials, 'myFilter':myFilter})
 
 # class CurriculumGoalEditView(CreateView):
 #     model = TutorialList #need to add  goal field to student model

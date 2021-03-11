@@ -19,7 +19,7 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('hub.urls')),
-    path('members/', include('django.contrib.auth.urls')), #django auth system packge 'urls' will take care of login,logout pages.
-    path('members/', include('members.urls')),
+    path('users/', include('django.contrib.auth.urls')), #django auth system packge 'urls' will take care of login,logout pages.
+    path('users/', include('users.urls')),
 
 ]

@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 from .views import  HomeView, TutorialDetailsView, ContactView #, EditGoalView #,TutorialListView,
+from .views import *
 
 urlpatterns = [
 	# path('', views.index, name='index'),
@@ -12,7 +13,8 @@ urlpatterns = [
 	# path('register/', ResistrationView.as_view(), name='registration'),
 	# path('login/', LoginView.as_view(), name='login'),
 
-	path('curriculum_list/', views.MycurriculumList, name='curriculum_list'),
+	# path('curriculum_list/', views.MycurriculumList, name='curriculum_list'),
 	# path('my_goal/<int:pk>', CurriculumGoalEditView.as_view(), name="curriculum_goal_edit"),
 
+	path('cart/', views.MyCurriculumList, name='curriculum'),
 ]

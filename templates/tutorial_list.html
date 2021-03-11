@@ -9,6 +9,7 @@
 
         <div class="card card-body">
             <h5>Tutorial List</h5>
+            <h1 style="color: red;"> add btn -> checkbox and add to curri at once </h1>
 
 
             <div class="card card-body">
@@ -28,16 +29,16 @@
 
                 <div class="col-sm-2 form-group is-valid"><label for="id_language">Language</label>
                     <select name="language" class="language form-control is-valid" title="" id="id_language">
-                    <option value="" selected>Choose Language</option>
+                    <option value="" selected> select </option>
                     <option value="Korean">Korean</option>
                     <option value="English">English</option>
                     </select>
                 </div>
 
                 <div class="col-sm-2 form-group is-valid">
-                    <label for="id_difficulty"Choose Difficulty> Difficulty </label>
+                    <label for="id_difficulty"Choose Difficulty> Difficulty Level </label>
                     <select name="difficulty" class="difficulty form-control is-valid" title="" id="id_difficulty">
-                    <option value="" selected>Choose Difficulty</option>
+                    <option value="" selected >select</option>
                     <option value="Beginner">Beginner</option>
                     <option value="Intermediate">Intermediate</option>
                     <option value="Advanced">Advanced</option>
@@ -68,6 +69,7 @@
                     <div class="card card-body table-responsive">
                         <table class="table">
                             <tr>
+                                <th> add </th>
                                 <th> Title</th>
                                 <th> Instructor</th>
 
@@ -79,13 +81,14 @@
                             </tr>
                             {% for item in tutorials %}
                             <tr>
+                                <td><button class="btn btn-warning search_btn" type="submit"> Add </button></td>
                                 <td><a href="{% url 'tutorial_detail' item.pk %}">{{item.title}}</a></td>
                                 <td>{{item.instructor}}</td>
                                 <td>{{item.tags}}</td>
                                 <td>{{item.last_updated}}</td>
                                 <td>{{item.difficulty}}</td>
                                 <td>{{item.language}}</td>
-                                <td>{{item.estimated_learning_hours}}</td>
+                                <td>{{item.duration}}</td>
                             </tr>
                             {% endfor %}
                         </table>
