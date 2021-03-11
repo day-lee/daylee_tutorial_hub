@@ -2,25 +2,26 @@
 {% block title %} Introduction {% endblock %}
 {% block content %}
 
-<br>
+<h1> goal edit </h1>
+
+card box
+
 <div class="col-md">
     <div class="card card-body">
-        <h4>Tutorial: {{object.title}} </h4>
+        <h4> Edit your Goal {{object.title}} </h4>
     </div>
 <br>
     <div class="card" style="width: auto;">
-        <img src="..." class="card-img-top" alt="img">
-
-        <!-- for demo  -->
         <div class="row justify-content-center">
-        <div class="col col-md">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/xv_bwpA_aEA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
         </div>
         <div class="card-body">
-        <h5 class="card-title">Pro TIP</h5>
+        <h5 class="card-title"></h5>
     <p class="card-text">{{object.description}} <br> {{object.tags}}</p>
   </div>
+      <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+      </form>
   <ul class="list-group list-group-flush">
     <li class="list-group-item"> Difficulty: {{object.difficulty}}</li>
     <li class="list-group-item"> Instructor: {{object.instructor}}</li>
@@ -29,10 +30,17 @@
     <li class="list-group-item"> Duration: {{object.estimated_learning_hours}}</li>
   </ul>
   <div class="card-body">
-    <a href="{{object.link}}" class="card-link">{{object.link}}</a>
+<!-- Button Cancel Save  Delete  -->
+    <button class="btn btn-secondary"> Cancel </button>
+    <button class="btn btn-secondary"> Save </button>
+    <button class="btn btn-secondary"> Delete </button>
   </div>
 </div>
 </div>
+
+
+
+
   <!-- Footer -->
 {% include 'footer.html' %}
 

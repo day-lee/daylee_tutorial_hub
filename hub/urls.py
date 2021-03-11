@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import  HomeView, TutorialDetailsView, ContactView #,TutorialListView,
+from .views import  HomeView, TutorialDetailsView, ContactView #, EditGoalView #,TutorialListView,
 
 urlpatterns = [
 	# path('', views.index, name='index'),
@@ -11,4 +11,8 @@ urlpatterns = [
 	path('contact/', ContactView.as_view(), name='contact'),
 	# path('register/', ResistrationView.as_view(), name='registration'),
 	# path('login/', LoginView.as_view(), name='login'),
+
+	path('curriculum_list/', views.MycurriculumList, name='curriculum_list'),
+	# path('my_goal/<int:pk>', CurriculumGoalEditView.as_view(), name="curriculum_goal_edit"),
+
 ]

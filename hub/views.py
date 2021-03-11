@@ -11,7 +11,6 @@ class HomeView(ListView):
 	model = TutorialList
 	template_name ='index.html'
 
-
 # class based: html-> object_list
 # class TutorialListView(ListView):
 #     model = TutorialList
@@ -22,17 +21,12 @@ class HomeView(ListView):
 # 		context['filter'] = TutorialFilter(self.request.GET, queryset=self.get_queryset())
 # 		return context
 
-
 def TutorialsList(request):
 	tutorials = TutorialList.objects.all()
 	# tutorial = tutorials.tutoriallist_set.all() parent child relatioship case
 	myFilter = TutorialFilter(request.GET, queryset=tutorials)
 	tutorials = myFilter.qs #rendered, thrown into filter , filter down, remake var with the filter down data
 	return render(request, 'tutorial_list.html', {'tutorials': tutorials, 'myFilter':myFilter})
-
-
-
-
 
 # <a href="{% url 'tutorial-detail' post.pk %}"></a>
 class TutorialDetailsView(DetailView):
@@ -42,6 +36,23 @@ class TutorialDetailsView(DetailView):
 class ContactView(ListView):
     model = TutorialList
     template_name = 'contact.html'
+
+def MycurriculumList(request):
+	tutorials = TutorialList.objects.all()
+	# tutorial = tutorials.tutoriallist_set.all() parent child relatioship case
+	myFilter = TutorialFilter(request.GET, queryset=tutorials)
+	tutorials = myFilter.qs #rendered, thrown into filter , filter down, remake var with the filter down data
+	return render(request, 'curriculum_list.html', {'tutorials': tutorials, 'myFilter':myFilter})
+
+# class CurriculumGoalEditView(CreateView):
+#     model = TutorialList #need to add  goal field to student model
+#     template_name = 'curriculum_goal_edit.html'
+#     fields = '__all__'
+
+
+
+
+
 
 
 #----------------------------
